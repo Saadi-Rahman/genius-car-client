@@ -1,4 +1,5 @@
 import React from 'react';
+import './BannerItem.css';
 
 const BannerItem = ({slide}) => {
     const {image, id, prev, next} = slide;
@@ -16,7 +17,7 @@ const BannerItem = ({slide}) => {
                     <p className='text-xs md:text-xl text-white'>There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
                 </div>
                 <div>
-                    <button className="btn btn-xs sm:btn-sm md:btn-md btn-error mr-3 md:mr-5 text-white">Discover More</button>
+                    <button className="btn btn-xs sm:btn-sm md:btn-md btn-error base-bg-color mr-3 md:mr-5 text-white">Discover More</button>
                     <button className="btn btn-xs sm:btn-sm md:btn-md glass">Latest Project</button>
                 </div>
             </div>
