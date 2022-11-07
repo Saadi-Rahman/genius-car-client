@@ -44,3 +44,7 @@
 .base-bg-color {
   background-color: #FF3811;
 }
+
+.border-color {
+  border: 1px solid #C8CACD;
+}
