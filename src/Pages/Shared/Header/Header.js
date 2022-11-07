@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo.svg';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user} = useContext(AuthContext);
 
     const menuItems = <>
         <li className='md:mx-1 font-semibold text-xl'><Link to="/">Home</Link></li>
@@ -10,7 +12,14 @@ const Header = () => {
         <li className='md:mx-1 font-semibold text-xl'><Link to="/">Services</Link></li>
         <li className='md:mx-1 font-semibold text-xl'><Link to="/">Blog</Link></li>
         <li className='md:mx-1 font-semibold text-xl'><Link to="/">Contact</Link></li>
-        <li className='md:mx-1 font-semibold text-xl'><Link to="/login">Login</Link></li>
+        {
+            user?.email ?
+            <>
+            <li className='md:mx-1 font-semibold text-xl'><Link to="/orders">Orders</Link></li>
+            </>
+            :
+            <li className='md:mx-1 font-semibold text-xl'><Link to="/login">Login</Link></li>
+        }
     </>
 
     return (
@@ -32,7 +41,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-ghost md:text-base md:px-6">Appointment</button>
+                <button className="btn btn-outline btn-ghost md:text-base md:px-6 base-color">Appointment</button>
             </div>
         </div>
     );
